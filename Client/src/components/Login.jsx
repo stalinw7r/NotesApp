@@ -26,7 +26,7 @@ const Login = () => {
     navigate("/home");
   };
   return (
-    <div className="absolute  -z-10 min-h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#3cee33_100%)]">
+    <div className="absolute  -z-10 min-h-full w-full items-center px-5 py-auto [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#3cee33_100%)]">
       <div className="container mx-auto mt-50">
         <h1 className="font-bold text-2xl text-center my-10">
           Login to your account
