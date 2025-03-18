@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import conn from "./mongoDb.js";
 import authRouter from "./routes/authRouter.js";
 import passRouter from "./routes/passRouter.js";
 const app = express();

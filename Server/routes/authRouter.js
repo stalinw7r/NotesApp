@@ -96,7 +96,7 @@ authRouter.post(
       };
 
       // JWT token generate
-      const authToken = await jwt.sign(data, JWT_TOKEN);
+      const authToken = jwt.sign(data, JWT_TOKEN);
       res.send({ Success: true, authToken });
     } catch (errors) {
       res
@@ -115,7 +115,7 @@ authRouter.get("/getuser", LoginAware, async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .send({ Success: false, errors: [{ msg: "internal server error" }] });
+      .send({ Success: false, errors: [{ msg: "Internal server error" }] });
   }
 });
 
