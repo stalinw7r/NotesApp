@@ -21,7 +21,6 @@ const Navbar = (props) => {
       localStorage.removeItem("authToken");
       setstatus(false);
       navigate("/");
-      //   console.log("logged out");
     }
   };
 

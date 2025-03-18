@@ -23,10 +23,9 @@ const CreatePass = () => {
         }
       )
       .then((res) => {
-        console.log("sdf");
+        setnotetitle([]), setnotedesc([]);
       })
       .catch((err) => console.log(err));
-    setnotetitle([]), setnotedesc([]);
   };
   const note = () => {
     toast.success("Note saved successfully!", {

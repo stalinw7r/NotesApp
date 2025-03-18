@@ -18,7 +18,6 @@ const Mainview = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setnotetitle(res.data.notetitle);
         setnotedesc(res.data.notedesc);
       })

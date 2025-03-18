@@ -19,7 +19,6 @@ const UpdatePass = (props) => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setnotetitle(res.data.notetitle);
         setnotedesc(res.data.notedesc);
       })
@@ -40,9 +39,7 @@ const UpdatePass = (props) => {
           },
         }
       )
-      .then((res) => {
-        console.log("sdf");
-      })
+      .then((res) => {})
       .catch((err) => console.log(err));
   };
   const note = async () => {
