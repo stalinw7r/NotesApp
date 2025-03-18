@@ -4,8 +4,11 @@ import User from "../models/authModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import LoginAware from "../middleware/LoginAware.js";
+import { configDotenv } from "dotenv";
 
-const JWT_TOKEN = "goofd";
+configDotenv();
+
+const Authentication_token = process.env.JWT_TOKEN;
 
 const authRouter = express.Router();
 
@@ -96,7 +99,7 @@ authRouter.post(
       };
 
       // JWT token generate
-      const authToken = jwt.sign(data, JWT_TOKEN);
+      const authToken = jwt.sign(data, Authentication_token);
       res.send({ Success: true, authToken });
     } catch (errors) {
       res

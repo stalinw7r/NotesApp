@@ -1,5 +1,9 @@
 import jwt from "jsonwebtoken";
-const JWT_TOKEN = "goofd";
+
+import { configDotenv } from "dotenv";
+
+configDotenv();
+const Authentication_token = process.env.JWT_TOKEN;
 
 const LoginAware = (req, res, next) => {
   const token = req.header("authToken");
@@ -9,7 +13,7 @@ const LoginAware = (req, res, next) => {
       .status(401)
       .send({ Success: false, errors: [{ msg: "invalid token" }] });
   }
-  const data = jwt.verify(token, JWT_TOKEN);
+  const data = jwt.verify(token, Authentication_token);
   if (!data) {
     return res
       .status(404)
