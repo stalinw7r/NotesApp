@@ -27,7 +27,7 @@ authRouter.post(
 
     // insertion
     try {
-      // destructuing
+      // destructuring
       const { name, email, username } = req.body;
       //   check duplicate
       const existUser = await User.findOne({ email });
@@ -70,7 +70,7 @@ authRouter.post(
     const Success = true;
 
     try {
-      // destructuing
+      // destructuring
       const { email, password } = req.body;
 
       // find user

@@ -1,12 +1,11 @@
 import express from "express";
 import LoginAware from "../middleware/LoginAware.js";
 import { body, validationResult } from "express-validator";
-
 import Pass from "../models/passModel.js";
 
 const passRouter = express.Router();
 
-// Route 1: Store passwords, login required
+// Route 1: Store notes, login required
 passRouter.post(
   "/createpass",
   LoginAware,
@@ -19,9 +18,8 @@ passRouter.post(
     if (!result.isEmpty()) {
       res.send({ errors: result.array() });
     }
-
+    // insertion
     try {
-      // insertion
       // destructure
       const thisuserid = req.user.id;
       const { userid, notetitle, notedesc } = req.body;
@@ -35,7 +33,7 @@ passRouter.post(
     } catch (error) {
       res
         .status(500)
-        .send({ Success: false, errors: [{ msg: "sdfsd server error" }] });
+        .send({ Success: false, errors: [{ msg: "Internal server error" }] });
     }
   }
 );
@@ -50,7 +48,7 @@ passRouter.get("/getnotes", LoginAware, async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .send({ Success: false, errors: [{ msg: "sdfsd server error" }] });
+      .send({ Success: false, errors: [{ msg: "Internal server error" }] });
   }
 });
 
@@ -65,7 +63,7 @@ passRouter.delete("/deletenote/:id", LoginAware, async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .send({ Success: false, errors: [{ msg: "sdfsd server error" }] });
+      .send({ Success: false, errors: [{ msg: "Internal server error" }] });
   }
 });
 
@@ -95,7 +93,7 @@ passRouter.put(
     } catch (error) {
       res
         .status(500)
-        .send({ Success: false, errors: [{ msg: "sdfsd server error" }] });
+        .send({ Success: false, errors: [{ msg: "Internal server error" }] });
     }
   }
 );
@@ -111,7 +109,7 @@ passRouter.get("/getnote/:id", LoginAware, async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .send({ Success: false, errors: [{ msg: "sdfsd server error" }] });
+      .send({ Success: false, errors: [{ msg: "Internal server error" }] });
   }
 });
 
