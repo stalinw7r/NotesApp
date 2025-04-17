@@ -6,6 +6,7 @@ import CreatePass from "./passwords/CreatePass";
 import ViewPass from "./passwords/viewPass";
 
 const Home = () => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const [user, setuser] = useState([]);
   const [greeting, setgreeting] = useState();
   const token = localStorage.getItem("authToken");
@@ -15,7 +16,7 @@ const Home = () => {
       navigate("/login");
     }
     axios
-      .get("http://localhost:3000/auth/getuser", {
+      .get(`${apiLink}/auth/getuser`, {
         headers: {
           "Content-Type": "application/json",
           authToken: token,

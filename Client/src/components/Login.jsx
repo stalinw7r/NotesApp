@@ -4,13 +4,14 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router";
 
 const Login = () => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const [email, setemail] = useState([]);
   const [password, setpassword] = useState([]);
   const navigate = useNavigate();
   const Logon = async (e) => {
     e.preventDefault();
     const logstatus = await axios
-      .post("http://localhost:3000/auth/login", { email, password })
+      .post(`${apiLink}/auth/login`, { email, password })
       .then((res) => {
         if (res.data.Success) {
           localStorage.setItem("authToken", res.data.authToken);

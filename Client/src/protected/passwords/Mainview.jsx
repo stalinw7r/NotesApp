@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router";
 
 const Mainview = () => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const navigate = useNavigate();
   const { id } = useParams();
   const [notetitle, setnotetitle] = useState([]);
@@ -12,7 +13,7 @@ const Mainview = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/password/getnote/" + id, {
+      .get(`${apiLink}/password/getnote/` + id, {
         headers: {
           authToken: token,
         },

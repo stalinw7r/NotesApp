@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
 const UpdatePass = (props) => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const navigate = useNavigate();
   const { id } = useParams();
   const [notetitle, setnotetitle] = useState([]);
@@ -13,7 +14,7 @@ const UpdatePass = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/password/getnote/" + id, {
+      .get(`${apiLink}/password/getnote/` + id, {
         headers: {
           authToken: token,
         },
@@ -30,7 +31,7 @@ const UpdatePass = (props) => {
 
     await axios
       .put(
-        "http://localhost:3000/password/updatenote/" + id,
+        `${apiLink}/password/updatenote/` + id,
         { notetitle, notedesc },
         {
           headers: {

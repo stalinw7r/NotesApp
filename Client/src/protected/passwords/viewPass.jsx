@@ -4,12 +4,13 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 const ViewPass = () => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const navigate = useNavigate();
   const [notes, setnotes] = useState([]);
   const token = localStorage.getItem("authToken");
   useEffect(() => {
     axios
-      .get("http://localhost:3000/password/getnotes", {
+      .get(`${apiLink}/password/getnotes`, {
         headers: {
           authToken: token,
         },
@@ -24,7 +25,7 @@ const ViewPass = () => {
     const check = confirm("Are you sure you want to delete?");
     if (check) {
       axios
-        .delete("http://localhost:3000/password/deletenote/" + id, {
+        .delete(`${apiLink}/password/deletenote/` + id, {
           headers: {
             authToken: token,
           },
@@ -57,7 +58,7 @@ const ViewPass = () => {
         {notes.map((note) => {
           return (
             <div key={note._id} className="itemcard w-full  md:w-1/3 p-1 ">
-              <div className="border bg-black/30 rounded-2xl p-3 h-[200px]">
+              <div className="border bg-black/30 rounded-2xl p-3 h-[200px] md:h-fit">
                 <div className="cardcontent">
                   <div className="font-bold text-green-400 text-xl flex justify-between mb-1">
                     <h1

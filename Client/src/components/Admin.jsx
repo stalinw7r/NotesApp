@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router";
 
 const Admin = () => {
+  const apiLink = "https://qwiknotesapi.dashdeal.ca";
   const [email, setemail] = useState([]);
   const [name, setname] = useState([]);
   const [username, setusername] = useState([]);
@@ -12,7 +13,7 @@ const Admin = () => {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/auth/signup", {
+      .post(`${apiLink}/auth/signup`, {
         email,
         name,
         username,
