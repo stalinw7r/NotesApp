@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router";
 
 const Admin = () => {
-  const apiLink = "https://qwiknotesapi.dashdeal.ca";
+  const apiLink = "http://localhost:3000";
   const [email, setemail] = useState([]);
   const [name, setname] = useState([]);
   const [username, setusername] = useState([]);

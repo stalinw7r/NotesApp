@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const CreatePass = () => {
-  const apiLink = "https://qwiknotesapi.dashdeal.ca";
+  const apiLink = "http://localhost:3000";
   const [notetitle, setnotetitle] = useState([]);
   const [notedesc, setnotedesc] = useState([]);
   const token = localStorage.getItem("authToken");

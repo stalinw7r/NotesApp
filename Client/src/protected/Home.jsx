@@ -6,7 +6,7 @@ import CreatePass from "./passwords/CreatePass";
 import ViewPass from "./passwords/viewPass";
 
 const Home = () => {
-  const apiLink = "https://qwiknotesapi.dashdeal.ca";
+  const apiLink = "http://localhost:3000";
   const [user, setuser] = useState([]);
   const [greeting, setgreeting] = useState();
   const token = localStorage.getItem("authToken");

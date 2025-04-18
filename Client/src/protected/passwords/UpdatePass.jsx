@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
 const UpdatePass = (props) => {
-  const apiLink = "https://qwiknotesapi.dashdeal.ca";
+  const apiLink = "http://localhost:3000";
   const navigate = useNavigate();
   const { id } = useParams();
   const [notetitle, setnotetitle] = useState([]);

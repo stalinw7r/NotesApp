@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 const ViewPass = () => {
-  const apiLink = "https://qwiknotesapi.dashdeal.ca";
+  const apiLink = "http://localhost:3000";
   const navigate = useNavigate();
   const [notes, setnotes] = useState([]);
   const token = localStorage.getItem("authToken");

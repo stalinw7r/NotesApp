@@ -7,7 +7,6 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
-app.options("*", cors());
 
 app.use(express.json());
 
